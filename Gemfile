@@ -64,6 +64,13 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  gem "better_errors"
+  gem "guard"
+  gem "guard-livereload", require: false
+  gem "simple_form"
+  gem "gravatar_image_tag"
+  gem "devise"
 end
 
 group :test do
