@@ -1,22 +1,23 @@
-<%= form_with(model: tweeet) do |form| %>
-  <% if tweeet.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(tweeet.errors.count, "error") %> prohibited this tweeet from being saved:</h2>
-
-      <ul>
-        <% tweeet.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<div class="d-flex mb-3 justify-content-center form-group">
+  <%= form_with(model: tweeet) do |form| %>
+    <% if tweeet.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(tweeet.errors.count, "error") %> prohibited this tweeet from being saved:</h2>
+        <ul>
+          <% tweeet.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div>
+      <%= form.label :tweeet, "Write a post...", style: "display: block" %>
+      <%= form.text_area :tweeet, class: "form-control" %>
+    </div>
+      <div>
+      <%= form.submit %>
     </div>
   <% end %>
+</div>
 
-  <div>
-    <%= form.label :tweeet, style: "display: block" %>
-    <%= form.text_area :tweeet %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+<%# Can't add class: "btn btn-primary" to form.submit because it generates a <submit> element %>
