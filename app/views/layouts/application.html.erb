@@ -13,14 +13,16 @@
       <%= link_to root_path, class:"navbar-brand" do %>
         <div>Twittter</div>
       <% end %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
-          <%= link_to new_tweeet_path, class:"nav-link" do %>
-            <div>New Tweeet</div>
-          <% end %>
+          <li class="nav-item">
+            <%= link_to new_tweeet_path, class:"nav-link" do %>
+              <div>New Tweeet</div>
+            <% end %>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Login</a>
           </li>
