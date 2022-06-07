@@ -5,7 +5,9 @@
         <img src="https://via.placeholder.com/64x64" alt="Sample Image">
       </div>
       <div class="flex-grow-1 ms-3">
-        <h5>mkzr <small class="text-muted"><i>Posted on <%= tweeet.created_at.to_date %></i></small></h5>
+        <h5>mkzr 
+          <small class="text-muted"><i>Posted on <%= tweeet.created_at.to_date %></i></small>
+        </h5>
         <p><%= tweeet.tweeet %></p>
         <div class="container">
           <div class="row justify-content-center">
@@ -15,7 +17,8 @@
             <%= link_to edit_tweeet_path(tweeet), class: "col-2" do %>
               <span class="icon"><i class="fa-solid fa-pencil"></i></span>
             <% end %>
-            <%= link_to tweeet, class: "col-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this tweeet?" } do %>
+            <%= link_to tweeet, class: "col-2", data: { turbo_method: :delete,
+                                         turbo_confirm: "Are you sure you want to delete this tweeet?" } do %>
               <span class="icon"><i class="fa-solid fa-trash"></i></span>
             <% end %>
           </div>

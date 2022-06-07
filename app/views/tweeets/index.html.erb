@@ -1,8 +1,7 @@
-<section class="section">
-  <div class="container mt-4">
-    <div class="row justify-content-center">
-      <%= render 'feed', tweeets: @tweeets %>
-    </div>
+<section class="container mt-4">
+  <div class="row justify-content-between">
+    <%= render 'profile' %>
+    <%= render 'feed', tweeets: @tweeets %>
+    <%= render 'who_to_follow' %>
   </div>
 </section>
-
