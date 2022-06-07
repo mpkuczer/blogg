@@ -1,4 +1,4 @@
-<div class="d-flex mb-3 justify-content-center form-group">
+<div class="mb-3 text-center form-group">
   <%= form_with(model: tweeet) do |form| %>
     <% if tweeet.errors.any? %>
       <div style="color: red">
@@ -11,13 +11,14 @@
       </div>
     <% end %>
     <div>
-      <%= form.label :tweeet, "Write a post...", style: "display: block" %>
-      <%= form.text_area :tweeet, class: "form-control" %>
+      <%= form.label :tweeet, style: "display: none" %>
+      <%= form.text_area :tweeet, class: "form-control mx-2 my-2", placeholder: "Write a post..." %>
     </div>
       <div>
-      <%= form.submit %>
+      <%= form.submit "Create", class: "btn btn-light border" %>
     </div>
   <% end %>
 </div>
+
 
 <%# Can't add class: "btn btn-primary" to form.submit because it generates a <submit> element %>
