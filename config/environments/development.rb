@@ -70,5 +70,6 @@ Rails.application.configure do
 
   config.sass.inline_source_maps = true
 
+  # Devise default url
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end
