@@ -9,16 +9,6 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <% if flash[:notice] %>
-      <div class="alert alert-warning">
-        <%= notice %>
-      </div>
-    <% end %>
-    <% if flash[:alert] %>
-      <div class="alert alert-danger">
-        <%= alert %>
-      </div>
-    <% end %>
     <nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
       <%= link_to root_path, class:"navbar-brand" do %>
         <div>Twittter</div>
@@ -40,6 +30,16 @@
         </ul>
       </div>
     </nav>
+    <% if flash[:notice] %>
+      <div class="alert alert-warning">
+        <%= notice %>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= alert %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

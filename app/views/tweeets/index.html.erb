@@ -1,16 +1,8 @@
 <section class="section">
-  <div class="container">
-    <div class="row">
-      <%= render 'feed' %>
+  <div class="container mt-4">
+    <div class="row justify-content-center">
+      <%= render 'feed', tweeets: @tweeets %>
     </div>
   </div>
 </section>
-<div id="tweeets">
-  <% @tweeets.each do |tweeet| %>
-    <%= render tweeet %>
-    <p>
-      <%= link_to "Show this tweeet", tweeet %>
-    </p>
-  <% end %>
-</div>
-<%= link_to "New tweeet", new_tweeet_path %>
+
