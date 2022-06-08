@@ -37,16 +37,10 @@ class PostsController < ApplicationController
     end
   end
 
-  def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to posts_url, notice: "Post was successfully destroyed."
-  end
 
   private
 
   def initialize_values
-    # @post = Post.find(params[:id])
     @posts = Post.all.order("created_at DESC")
   end
 

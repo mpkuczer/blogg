@@ -1,0 +1,11 @@
+<%= link_to post, class: "col-2" do %>
+  <span class="icon"><i class="fa-solid fa-link text-dark"></i></span>
+<% end %>
+<%= link_to edit_post_path(post), class: "col-2" do %>
+  <span class="icon"><i class="fa-solid fa-pencil text-dark"></i></span>
+<% end %>
+<%= link_to post, class: "col-2", data: { 
+                              turbo_method: :delete,
+                              turbo_confirm: "Are you sure you want to delete this post?" } do %>
+  <span class="icon"><i class="fa-solid fa-trash text-dark"></i></span>
+<% end %>
