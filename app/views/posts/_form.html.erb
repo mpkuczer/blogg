@@ -1,13 +1,13 @@
 <div class="mb-5 row form-group">
-  <%= form_with model: tweeet, class: "row" do |form| %>
-    <% if tweeet.errors.any? %>
-      <% tweeet.errors.each do |error| %>
+  <%= form_with model: post, class: "row" do |form| %>
+    <% if post.errors.any? %>
+      <% post.errors.each do |error| %>
         <% flash.now[:notice] = error.full_message %>
       <% end %>
     <% end %>
     <div class="col-11">
-      <%= form.label :tweeet, style: "display: none" %>
-      <%= form.text_area :tweeet, class: "form-control mx-2", placeholder: "Write about it" %>
+      <%= form.label :post, style: "display: none" %>
+      <%= form.text_area :post, class: "form-control mx-2", placeholder: "Write about it" %>
     </div>
     <div class="col-1 d-flex align-items-center">
       <%= form.submit "Create", class: "h-100 btn btn-light border " %>

@@ -1,17 +1,17 @@
 <%# In order to render _form, I need to pass the instance variable @tweets.
- This view is dealt with via tweeets#index, which doesn't set the variable
- Is it a good idea to set @tweeet = Tweeet.new in the controller? %>
+ This view is dealt with via posts#index, which doesn't set the variable
+ Is it a good idea to set @post = Post.new in the controller? %>
 
 <section class="container mt-4">
   <div class="row">
-    <%= render 'form', tweeet: @tweeet %>
+    <%= render 'form', post: @post %>
   </div>
   <div class="row justify-content-between">
     <div class="col-lg-3">
       <%= render 'profile' %>
     </div>
     <div class="col-lg-6">
-      <%= render @tweeets %> <%# This is so cool %>
+      <%= render @posts %> <%# This is so cool %>
     </div>
     <div class="col-lg-3">
       <%= render 'explore' %>
