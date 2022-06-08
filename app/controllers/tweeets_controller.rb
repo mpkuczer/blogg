@@ -1,5 +1,5 @@
 class TweeetsController < ApplicationController
-  before_action :set_tweeet, only: %i[ show edit update destroy ]
+  before_action :initialize_values
 
   # GET /tweeets or /tweeets.json
   def index
@@ -24,16 +24,13 @@ class TweeetsController < ApplicationController
   def create
     @tweeet = Tweeet.new(tweeet_params)
 
-    respond_to do |format|
-      if @tweeet.save
-        format.html { redirect_to tweeet_url(@tweeet), notice: "Tweeet was successfully created." }
-        format.json { render :show, status: :created, location: @tweeet }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @tweeet.errors, status: :unprocessable_entity }
-      end
+    if @tweeet.save
+      redirect_to tweeets_path, notice: "Tweeet was successfully created."
+    else
+      render :index, notice: "Error", status: :unprocessable_entity
     end
   end
+
 
   # PATCH/PUT /tweeets/1 or /tweeets/1.json
   def update
@@ -59,9 +56,9 @@ class TweeetsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_tweeet
-      @tweeet = Tweeet.find(params[:id])
+    def initialize_values
+      # @tweeet = Tweeet.find(params[:id])
+      @tweeets = Tweeet.all.order("created_at DESC")
     end
 
     # Only allow a list of trusted parameters through.

@@ -1,18 +1,13 @@
 <div class="mb-5 row form-group">
   <%= form_with model: tweeet, class: "row" do |form| %>
     <% if tweeet.errors.any? %>
-      <div style="color: red">
-        <h2><%= pluralize(tweeet.errors.count, "error") %> prohibited this tweeet from being saved:</h2>
-        <ul>
-          <% tweeet.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
+      <% tweeet.errors.each do |error| %>
+        <% flash.now[:notice] = error.full_message %>
+      <% end %>
     <% end %>
     <div class="col-11">
       <%= form.label :tweeet, style: "display: none" %>
-      <%= form.text_area :tweeet, class: "form-control mx-2", placeholder: "Write a post..." %>
+      <%= form.text_area :tweeet, class: "form-control mx-2", placeholder: "Write about it" %>
     </div>
     <div class="col-1 d-flex align-items-center">
       <%= form.submit "Create", class: "h-100 btn btn-light border " %>
