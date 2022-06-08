@@ -1,12 +1,9 @@
-class RegistrationsController < Devise:RegistrationsController
-
-  private
-
-  def sign_up_params
-    params.require[:user].permit[:name, :username, :email, :password, :password_confirmation]
+class RegistrationsController < Devise::RegistrationsController
+  
+  def new
   end
 
-  def user_update_params
-    params.require[:user].permit[:name, :username, :email, :password, :password_confirmation, :current_password]
+  def create
+    redirect_to root_path
   end
 end
