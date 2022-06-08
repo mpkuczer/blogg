@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :initialize_values
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @posts = Post.all.order("created_at DESC")
@@ -42,6 +44,10 @@ class PostsController < ApplicationController
 
   def initialize_values
     @posts = Post.all.order("created_at DESC")
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 
   def post_params
