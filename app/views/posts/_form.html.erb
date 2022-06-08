@@ -1,4 +1,4 @@
-<div class="mb-5 row form-group">
+<div class="mx-4 my-4 row form-group">
   <%= form_with model: post, class: "row" do |form| %>
     <% if post.errors.any? %>
       <% post.errors.each do |error| %>
@@ -7,11 +7,10 @@
     <% end %>
     <div class="col-11">
       <%= form.label :post, style: "display: none" %>
-      <%= form.text_area :post, class: "form-control mx-2", placeholder: "Write about it" %>
+      <%= form.text_area :post, class: "form-control mx-2", placeholder: "Write about it..." %>
     </div>
     <div class="col-1 d-flex align-items-center">
-      <%= form.submit "Create", class: "h-100 btn btn-light border " %>
+      <%= form.submit btn_text, class: "h-100 btn btn-light border " %>
     </div>
   <% end %>
 </div>
-<%# Can't add class: "btn btn-primary" to form.submit because it generates a <submit> element %>
