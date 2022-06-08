@@ -3,16 +3,17 @@
  Is it a good idea to set @tweeet = Tweeet.new in the controller? %>
 
 <section class="container mt-4">
-
+  <div class="row">
+    <%= render 'form', tweeet: @tweeet %>
+  </div>
   <div class="row justify-content-between">
-    <div class="col-lg-2">
+    <div class="col-lg-3">
       <%= render 'profile' %>
     </div>
     <div class="col-lg-6">
-      <%= render 'form', tweeet: @tweeet %>
       <%= render @tweeets %> <%# This is so cool %>
     </div>
-    <div class="col-lg-2">
+    <div class="col-lg-3">
       <%= render 'who_to_follow' %>
     </div>
   </div>
