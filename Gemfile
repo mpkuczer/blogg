@@ -47,6 +47,8 @@ gem "sassc-rails"
 
 gem "bootstrap"
 
+gem 'dotenv-rails'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -66,10 +68,7 @@ group :development do
   # gem "spring"
 
   gem "better_errors"
-  gem "guard"
-  gem "guard-livereload", require: false
   gem "simple_form"
-  gem "gravatar_image_tag"
   gem "devise"
 end
 
