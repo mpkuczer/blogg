@@ -269,7 +269,6 @@ DEPENDENCIES
   pg
   puma (~> 5.0)
   rails (~> 7.0.3)
-  sassc (~> 2.1.0)
   sassc-rails
   selenium-webdriver
   simple_form
