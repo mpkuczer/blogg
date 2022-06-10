@@ -5,8 +5,8 @@ end
 module ActiveRecord
   class Base
     def self.random
-      if (c = count) != 0
-        find(rand(c)+1)
+      if count != 0
+        find(rand(count)+1)
       end
     end
   end
