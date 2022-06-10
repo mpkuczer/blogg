@@ -23,23 +23,26 @@
               <div>New Post</div>
             <% end %>
           </li>
-          <li class="nav-item">
-            <%= link_to new_user_session_path, class: "nav-link" do %>
-              <div>Log in</div>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to new_user_registration_path, class: "nav-link" do %>
-              <div>Sign up</div>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to destroy_user_session_path, class: "nav-link",
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to destroy_user_session_path, class: "nav-link",
                                              data: { turbo_method: :delete } do %>
-              <div>Log out</div>
-            <% end %>
-          </li>
-        </ul>
+                <div>Log out</div>
+              <% end %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to new_user_session_path, class: "nav-link" do %>
+                <div>Log in</div>
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to new_user_registration_path, class: "nav-link" do %>
+                <div>Sign up</div>
+              <% end %>
+            </li>
+          </ul>
+        <% end %>
       </div>
     </nav>
     <% if flash[:notice] %>

@@ -1,9 +1,22 @@
+<% if user_signed_in? %>
+  <div class="card mb-3">
+    <div class="card-header">
+      <%= render "thumbnail_name", user: current_user %>
+    </div>
+    <div class="card-body">
+      <% if user_signed_in? %>
+        <div><%= current_user.username %> : Optional user description TBA</div>
+      <% end%>
+    </div>
+  </div>
+<% else %>
 <div class="card mb-3">
-  <div class="card-header">
-    <%= render "thumbnail_name" %>
-  </div>
-  <div class="card-body">
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur vero sed cumque, laborum suscipit 
-    laboriosam natus. Deleniti sapiente magnam voluptatum ex.
-  </div>
+    <div class="card-header">
+      <%= render "thumbnail_name", user: User.all.first %>
+    </div>
+    <div class="card-body">
+      <div> Alternative content before signing in</div>
+    </div>
 </div>
+<% end %>
+

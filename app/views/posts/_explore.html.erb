@@ -5,8 +5,11 @@
   <ul class="list-group list-group-flush">
     <% 5.times do %>
       <li class="list-group-item">
-        <%= render 'thumbnail_name' %>
+        <%= render 'thumbnail_name', user: User.random %>
       </li>
     <% end %>
+    <li class="list-group-item">
+        <%= render 'thumbnail_name', user: User.random %>
+      </li>
   </ul>
 </div>
