@@ -70,6 +70,7 @@ group :development do
   gem "better_errors"
   gem "simple_form"
   gem "devise"
+  gem "gravatar"
 end
 
 group :test do

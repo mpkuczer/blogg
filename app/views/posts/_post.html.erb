@@ -5,7 +5,9 @@
   <div class="card-body">
     <p><%= post.post %></p>
     <footer class="row justify-content-center">
-      <%= render "icons", post: post %>
+      <% if user_signed_in? %>
+        <%= render "icons", post: post %>
+      <% end %>
     </footer>
   </div>
 </div>
